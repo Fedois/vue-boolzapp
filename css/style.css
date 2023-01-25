@@ -1,39 +1,15 @@
+/* GENERAL */
+*{
+    user-select: none;
+}
 body{
     background: rgb(30,170,4);
     /* background: linear-gradient(180deg, rgba(30,170,4,1) 53%, rgba(0,224,255,0) 54%); */
-}
-
-.main-container{
-    width: 80%;
-    height: 95vh;
-}
-aside{
-    background-color: green;
-    width: 40%;
-}
-main{
-    width: 60%;
 }
 header{
     height: 50px;
     background-color: lightgray;
     padding: 0 5px;
-}
-.silent{
-    height: 80px;
-    background-color: rgb(85, 164, 188);
-}
-nav{
-    height: calc(100% - 130px);
-    background-color: white;
-}
-.mex{
-    height: calc(100% - 100px);
-    background-image: url('img/mine.jpg');
-}
-footer{
-    background-color: red;
-    height: 50px;
 }
 .avatar{
     height: 40px;
@@ -41,6 +17,23 @@ footer{
 }
 img{
     object-fit: cover;
+}
+.main-container{
+    width: 80%;
+    height: 95vh;
+}
+/* contenuto SX */
+aside{
+    background-color: green;
+    width: 40%;
+}
+main{
+    width: 60%;
+}
+
+.silent{
+    height: 80px;
+    background-color: rgb(85, 164, 188);
 }
 .silent > .avatar{
     line-height: 40px;
@@ -51,9 +44,35 @@ img{
 .search div{
     background-color: white;
 }
+nav{
+    height: calc(100% - 130px);
+    background-color: white;
+}
 ul{
     list-style: none;
 }
 .active{
     background-color: lightgray;
+}
+.my-icon a{
+    color: gray;
+}
+/* contenuto DX */
+.main-mex{
+    height: calc(100% - 100px);
+    background-image: url('../img/mine.jpg');
+    background-size: contain;
+}
+.user-mex{
+    justify-content: end;
+}
+.user-mex > div{
+    background-color: greenyellow;
+}
+.pc-mex > div{
+    background-color: beige;
+}
+footer{
+    background-color: wheat;
+    height: 50px;
 }
