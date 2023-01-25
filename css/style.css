@@ -1,0 +1,18 @@
+body{
+    background: rgb(30,170,4);
+    /* background: linear-gradient(180deg, rgba(30,170,4,1) 53%, rgba(0,224,255,0) 54%); */
+}
+
+.main-container{
+    width: 80%;
+    height: 95vh;
+    background-color: red;
+}
+aside{
+    background-color: green;
+    width: 40%;
+}
+main{
+    background-color: yellow;
+    width: 60%;
+}
