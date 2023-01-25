@@ -6,13 +6,54 @@ body{
 .main-container{
     width: 80%;
     height: 95vh;
-    background-color: red;
 }
 aside{
     background-color: green;
     width: 40%;
 }
 main{
-    background-color: yellow;
     width: 60%;
+}
+header{
+    height: 50px;
+    background-color: lightgray;
+    padding: 0 5px;
+}
+.silent{
+    height: 80px;
+    background-color: rgb(85, 164, 188);
+}
+nav{
+    height: calc(100% - 130px);
+    background-color: white;
+}
+.mex{
+    height: calc(100% - 100px);
+    background-image: url('img/mine.jpg');
+}
+footer{
+    background-color: red;
+    height: 50px;
+}
+.avatar{
+    height: 40px;
+    width: 40px;
+}
+img{
+    object-fit: cover;
+}
+.silent > .avatar{
+    line-height: 40px;
+}
+.search{
+    background-color: lightgray;
+}
+.search div{
+    background-color: white;
+}
+ul{
+    list-style: none;
+}
+.active{
+    background-color: lightgray;
 }

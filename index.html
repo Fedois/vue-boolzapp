@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
@@ -13,10 +15,93 @@
     
     <div class="main-container d-flex position-absolute top-50 start-50 translate-middle m-auto">
         <aside class="h-100">
+            <header class="d-flex align-items-center">
+                <div class="col-6">
+                    <div class="avatar d-inline-block">
+                        <img src="img/avatar_io.jpg" alt="img/avatar_io.jpg" class="w-100 rounded-circle d-inline-block"> 
+                    </div>
 
+                    <div class="name d-inline-block align-middle">
+                        <h6 class="m-0">Sofia</h6>
+                    </div>
+                    
+                </div>
+                
+                <div class="col-6 text-end">
+                    <a class="px-1" href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                    <a class="px-1" href="#"><i class="fa-solid fa-message"></i></a>
+                    <a class="px-1" href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </div>
+            </header>
+            
+            <div class="silent d-flex align-items-center p-4">
+                <div class="avatar d-inline-block bg-white rounded-circle text-center">
+                    <i class="fa-solid fa-bell-slash"></i>
+                </div>
+
+                <div class="info-silent ms-2 lh-1">
+                    <h6 class="m-0">Ricevi notifiche di nuovi messaggi</h6>
+                    <a href="#">Attiva notifiche desktop</a>
+                </div>
+            </div>
+
+            <nav>
+                <div class="search p-1">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text px-4" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+                
+                <ul class="list-style-none p-1">
+                    <li class="d-flex justify-content-between border-top border-bottom py-2 active">
+                        <div class="">
+                            <div class="avatar d-inline-block">
+                                <img src="img/avatar_io.jpg" alt="img/avatar_io.jpg" class="w-100 rounded-circle d-inline-block"> 
+                            </div>
+        
+                            <div class="name d-inline-block lh-1 align-middle">
+                                <h6 class="m-0">Sofia</h6>
+                                <span>ultimo messaggio inviato</span>
+                            </div>
+                        </div>
+                        
+                        <div class="text-end">
+                            <span>12:00</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </aside>
 
         <main class="h-100">
+            <header class="d-flex justify-content-between align-items-center">
+                <div class="">
+                    <div class="avatar d-inline-block">
+                        <img src="img/avatar_io.jpg" alt="img/avatar_io.jpg" class="w-100 rounded-circle d-inline-block"> 
+                    </div>
+
+                    <div class="name d-inline-block lh-1 align-middle">
+                        <h6 class="m-0">Sofia</h6>
+                        <span>ultimo accesso oggi alle 12:00</span>
+                    </div>
+                    
+                </div>
+                
+                <div class=" text-end">
+                    <a class="px-1" href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                    <a class="px-1" href="#"><i class="fa-solid fa-paperclip"></i></a>
+                    <a class="px-1" href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                </div>
+            </header>
+
+            <div class="mex">
+
+            </div>
+
+            <footer>
+
+            </footer>
 
         </main>
     </div>
