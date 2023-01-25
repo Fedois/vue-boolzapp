@@ -51,6 +51,9 @@ nav{
 ul{
     list-style: none;
 }
+ul li:hover{
+    cursor: pointer;
+}
 .active{
     background-color: lightgray;
 }
@@ -63,16 +66,24 @@ ul{
     background-image: url('../img/mine.jpg');
     background-size: contain;
 }
+.my-mex{
+    width: 200px;
+}
 .user-mex{
     justify-content: end;
 }
 .user-mex > div{
-    background-color: greenyellow;
+    background-color: rgb(172, 255, 149);
 }
 .pc-mex > div{
-    background-color: beige;
+    background-color: white;
+}
+.my-clock{
+    font-size: 10px;
+    color: lightgray;
+    font-weight: bold;
 }
 footer{
-    background-color: wheat;
+    background-color: beige;
     height: 50px;
 }
