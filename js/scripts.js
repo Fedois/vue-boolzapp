@@ -5,6 +5,8 @@ createApp({
 data() {
     return {
         currentContact: 0,
+        userMex: 'user-mex',
+        pcMex: 'pc-mex',
         writingMex: '',
         searchContact: '',
         reply: 'ok',

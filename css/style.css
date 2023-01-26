@@ -87,7 +87,6 @@ main{
 .my-mex{
     min-width: 30%;
     max-width: 60%;
-    background-color: #fdfdfd;
 }
 .my-mex > p{
     padding-right: 10px;
@@ -97,6 +96,9 @@ main{
 }
 .user-mex > .my-mex{
     background-color: #d5f9ba;
+}
+.pc-mex > .my-mex{
+    background-color: #fdfdfd;
 }
 .my-arrow{
     display: none;

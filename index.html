@@ -99,7 +99,7 @@
                 </header>
 
                 <div class="main-mex p-5">
-                    <div class="row-mex d-flex mb-2" v-for="(message, index) in contacts[currentContact].messages" :class="{'user-mex' : message.status == 'sent'}">
+                    <div class="row-mex d-flex mb-2" v-for="(message, index) in contacts[currentContact].messages" :class="(message.status == 'sent') ? (userMex) : (pcMex)">
                         <div class="my-mex rounded-3 py-2 px-2 position-relative" >
                             <p class="m-0 me-3 ms-1 pb-1">{{message.message}}</p>
                             <span class="my-clock pe-1 position-absolute bottom-0 end-0 align-self-end">15:00</span>
