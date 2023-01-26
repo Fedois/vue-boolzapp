@@ -5,6 +5,7 @@ createApp({
 data() {
     return {
         currentContact: 0,
+        writing: '',
         contacts: [
             {
                 name: 'Michele',
@@ -168,6 +169,12 @@ data() {
             ],
             }
         ]
+    }
+},
+methods: {
+    addMex(){
+        this.contacts[this.currentContact].messages.push({message: this.writing, status: 'sent'}),
+        this.writing = ''
     }
 }
 }).mount('#app')

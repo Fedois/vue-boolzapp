@@ -111,7 +111,7 @@
                     <div class="col text-center my-icon">
                         <a href="#"><i class="fa-regular fa-face-smile"></i></a>
                     </div>
-                    <div class="col-10"><input type="text" class="w-100 p-1 border-0"></div>
+                    <div class="col-10"><input type="text" v-model="writing" class="w-100 p-1 border-0" @keyup.enter="addMex"></div>
                     <div class="col text-center my-icon">
                         <a href="#"><i class="fa-solid fa-microphone"></i></a>
                     </div>
