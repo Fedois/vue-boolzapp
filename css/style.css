@@ -3,17 +3,19 @@
     user-select: none;
 }
 body{
-    background: rgb(30,170,4);
-    /* background: linear-gradient(180deg, rgba(30,170,4,1) 53%, rgba(0,224,255,0) 54%); */
+    background: rgb(0,150,136);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 25%, rgba(216,219,213,1) 25%);
+    height: 100vh;
 }
 header{
     height: 50px;
-    background-color: lightgray;
+    background-color: #eaeaea;
     padding: 0 5px;
 }
 .avatar{
     height: 40px;
     width: 40px;
+    margin-right: 5px;
 }
 img{
     object-fit: cover;
@@ -22,24 +24,28 @@ img{
     width: 80%;
     height: 95vh;
 }
+.my-icon a{
+    color: #b3b7b9;
+}
+span{
+   color: #b3b7b9
+}
 /* contenuto SX */
 aside{
     background-color: green;
     width: 40%;
+    height: 100%;
+    border-right: 1px solid #ccc ;
 }
-main{
-    width: 60%;
-}
-
 .silent{
     height: 80px;
-    background-color: rgb(85, 164, 188);
+    background-color: #8edafc;
 }
 .silent > .avatar{
     line-height: 40px;
 }
 .search{
-    background-color: lightgray;
+    background-color: #eaeaea;
 }
 .search div{
     background-color: white;
@@ -47,9 +53,12 @@ main{
 nav{
     height: calc(100% - 130px);
     background-color: white;
+    overflow: hidden;
 }
 ul{
+    height: 100%;
     list-style: none;
+    overflow: auto;
 }
 ul li:hover{
     cursor: pointer;
@@ -57,14 +66,19 @@ ul li:hover{
 .active{
     background-color: lightgray;
 }
-.my-icon a{
-    color: gray;
+
+.my-clock-sx{
+    font-size: 0.75rem;
 }
 /* contenuto DX */
+main{
+    width: 60%;
+}
 .main-mex{
     height: calc(100% - 100px);
     background-image: url('../img/mine.jpg');
     background-size: contain;
+    overflow: auto;
 }
 .my-mex{
     width: 200px;
@@ -73,10 +87,10 @@ ul li:hover{
     justify-content: end;
 }
 .user-mex > div{
-    background-color: rgb(172, 255, 149);
+    background-color: #d5f9ba;
 }
 .pc-mex > div{
-    background-color: white;
+    background-color: #fdfdfd;
 }
 .my-clock{
     font-size: 10px;
@@ -84,6 +98,6 @@ ul li:hover{
     font-weight: bold;
 }
 footer{
-    background-color: beige;
+    background-color: #f3eeea;
     height: 50px;
 }
