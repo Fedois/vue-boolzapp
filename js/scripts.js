@@ -6,6 +6,7 @@ data() {
     return {
         currentContact: 0,
         writing: '',
+        reply: 'ok',
         contacts: [
             {
                 name: 'Michele',
@@ -175,6 +176,12 @@ methods: {
     addMex(){
         this.contacts[this.currentContact].messages.push({message: this.writing, status: 'sent'}),
         this.writing = ''
+        
+        setTimeout(() => {
+            
+            this.contacts[this.currentContact].messages.push({message: this.reply, status: 'received'})
+            
+        }, 1000);
     }
 }
 }).mount('#app')

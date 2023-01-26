@@ -52,9 +52,12 @@ nav{
     background-color: #eaeaea;
     height: 50px;
 }
-.search div{
+.search > div{
     background-color: white;
 }
+/* .search > div > input:focus{
+    outline: none; 
+} */
 ul{
     height: calc(100% - 50px);
     list-style: none;
