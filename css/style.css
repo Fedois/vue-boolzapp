@@ -28,11 +28,10 @@ img{
     color: #b3b7b9;
 }
 span{
-   color: #b3b7b9
+   color: #b3b7b9;
 }
 /* contenuto SX */
 aside{
-    background-color: green;
     width: 40%;
     height: 100%;
     border-right: 1px solid #ccc ;
@@ -44,19 +43,20 @@ aside{
 .silent > .avatar{
     line-height: 40px;
 }
+
+nav{
+    height: calc(100% - 130px);
+    background-color: white;
+}
 .search{
     background-color: #eaeaea;
+    height: 50px;
 }
 .search div{
     background-color: white;
 }
-nav{
-    height: calc(100% - 130px);
-    background-color: white;
-    overflow: hidden;
-}
 ul{
-    height: 100%;
+    height: calc(100% - 50px);
     list-style: none;
     overflow: auto;
 }
@@ -64,7 +64,7 @@ ul li:hover{
     cursor: pointer;
 }
 .active{
-    background-color: lightgray;
+    background-color: #eaeaea;
 }
 
 .my-clock-sx{
@@ -78,19 +78,17 @@ main{
     height: calc(100% - 100px);
     background-image: url('../img/mine.jpg');
     background-size: contain;
-    overflow: auto;
+    overflow-y: auto;
 }
 .my-mex{
     width: 200px;
+    background-color: #fdfdfd;
 }
 .user-mex{
     justify-content: end;
 }
 .user-mex > div{
     background-color: #d5f9ba;
-}
-.pc-mex > div{
-    background-color: #fdfdfd;
 }
 .my-clock{
     font-size: 10px;

@@ -30,9 +30,9 @@
                     </div>
                     
                     <div class="col-6 text-end my-icon">
-                        <a class="px-1" href="#"><i class="fa-solid fa-circle-notch"></i></a>
-                        <a class="px-1" href="#"><i class="fa-solid fa-message"></i></a>
-                        <a class="px-1" href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        <a class="px-2" href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                        <a class="px-2" href="#"><i class="fa-solid fa-message"></i></a>
+                        <a class="px-2" href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     </div>
                 </header>
                 
@@ -56,7 +56,7 @@
                     </div>
                     
                     <ul class="list-style-none p-0">
-                        <li class="d-flex justify-content-between border-top border-bottom p-2" v-for="contact in contacts">
+                        <li class="d-flex justify-content-between border-top border-bottom p-2" v-for="(contact, index) in contacts" @click="currentContact = index" :class="{'active' : currentContact == index}">
                             <div>
                                 <div class="avatar d-inline-block">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="w-100 rounded-circle d-inline-block"> 
@@ -81,34 +81,27 @@
                 <header class="d-flex justify-content-between align-items-center">
                     <div class="">
                         <div class="avatar d-inline-block">
-                            <img src="img/avatar_io.jpg" alt="img/avatar_io.jpg" class="w-100 rounded-circle d-inline-block"> 
+                            <img :src="`img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name" class="w-100 rounded-circle d-inline-block"> 
                         </div>
 
                         <div class="name d-inline-block lh-1 align-middle">
-                            <h6 class="m-0">Sofia</h6>
+                            <h6 class="m-0">{{contacts[currentContact].name}}</h6>
                             <span>ultimo accesso oggi alle 12:00</span>
                         </div>
                         
                     </div>
                     
                     <div class="text-end my-icon">
-                        <a class="px-1" href="#"><i class="fa-solid fa-circle-notch"></i></a>
-                        <a class="px-1" href="#"><i class="fa-solid fa-paperclip"></i></a>
-                        <a class="px-1" href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        <a class="px-2" href="#"><i class="fa-solid fa-circle-notch"></i></a>
+                        <a class="px-2" href="#"><i class="fa-solid fa-paperclip"></i></a>
+                        <a class="px-2" href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
                     </div>
                 </header>
 
                 <div class="main-mex p-5">
-                    <div class="row-mex d-flex mb-2 pc-mex">
-                        <div class="my-mex d-flex justify-content-between d-inline-block rounded-3 py-2 px-2 position-relative">
-                            <p class="m-0 px-1 pb-1">ciao</p>
-                            <span class="my-clock pe-1 position-absolute bottom-0 end-0 align-self-end">15:00</span>
-                        </div>
-                    </div>
-                    
-                    <div class="row-mex d-flex mb-2 user-mex">
-                        <div class="my-mex d-flex justify-content-between d-inline-block rounded-3 py-2 px-2 position-relative">
-                            <p class="m-0 px-1 pb-1">bella</p>
+                    <div class="row-mex d-flex mb-2" v-for="message in contacts[currentContact].messages" :class="{'user-mex' : message.status == 'sent'}">
+                        <div class="my-mex rounded-3 py-2 px-2 position-relative">
+                            <p class="m-0 px-1 pb-1">{{message.message}}</p>
                             <span class="my-clock pe-1 position-absolute bottom-0 end-0 align-self-end">15:00</span>
                         </div>
                     </div>
