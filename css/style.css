@@ -30,6 +30,11 @@ img{
 span{
    color: #b3b7b9;
 }
+.my-clock{
+    font-size: 10px;
+    color: #b3b7b9;
+    font-weight: bold;
+}
 /* contenuto SX */
 aside{
     width: 40%;
@@ -55,9 +60,9 @@ nav{
 .search > div{
     background-color: white;
 }
-/* .search > div > input:focus{
+.search > div > input:focus{
     outline: none; 
-} */
+}
 ul{
     height: calc(100% - 50px);
     list-style: none;
@@ -68,10 +73,6 @@ ul li:hover{
 }
 .active{
     background-color: #eaeaea;
-}
-
-.my-clock-sx{
-    font-size: 0.75rem;
 }
 /* contenuto DX */
 main{
@@ -84,19 +85,18 @@ main{
     overflow-y: auto;
 }
 .my-mex{
-    width: 200px;
+    min-width: 30%;
+    max-width: 60%;
     background-color: #fdfdfd;
+}
+.my-mex > p{
+    padding-right: 10px;
 }
 .user-mex{
     justify-content: end;
 }
 .user-mex > div{
     background-color: #d5f9ba;
-}
-.my-clock{
-    font-size: 10px;
-    color: lightgray;
-    font-weight: bold;
 }
 footer{
     background-color: #f3eeea;

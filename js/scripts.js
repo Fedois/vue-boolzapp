@@ -5,7 +5,8 @@ createApp({
 data() {
     return {
         currentContact: 0,
-        writing: '',
+        writingMex: '',
+        searchContact: '',
         reply: 'ok',
         contacts: [
             {
@@ -174,14 +175,25 @@ data() {
 },
 methods: {
     addMex(){
-        this.contacts[this.currentContact].messages.push({message: this.writing, status: 'sent'}),
-        this.writing = ''
+        this.contacts[this.currentContact].messages.push({message: this.writingMex, status: 'sent'}),
+        this.writingMex = ''
         
         setTimeout(() => {
             
             this.contacts[this.currentContact].messages.push({message: this.reply, status: 'received'})
             
         }, 1000);
+    },
+},
+computed: {
+    inputSearchContacts(){
+        if(this.searchContact.trim().length > 0){
+            return this.contacts.filter((contact) => 
+                contact.name.toLowerCase().includes(this.searchContact.trim().toLowerCase())
+            )
+        }
+        
+        return this.contacts
     }
 }
 }).mount('#app')

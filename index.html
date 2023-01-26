@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Boolzapp</title>
 </head>
 <body>
     
@@ -50,13 +50,13 @@
                 <nav>
                     <div class="search p-1">
                         <div class="input-group flex-nowrap">
-                            <span class="input-group-text px-4 bg-white" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
-                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="addon-wrapping">
+                            <span class=" px-4 bg-white py-2" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
+                            <input v-model="searchContact" type="text" class="w-100 border-0 py-2" placeholder="Cerca o inizia una nuova chat" >
                         </div>
                     </div>
                     
                     <ul class="list-style-none p-0">
-                        <li class="d-flex justify-content-between border-top border-bottom p-2" v-for="(contact, index) in contacts" @click="currentContact = index" :class="{'active' : currentContact == index}">
+                        <li class="d-flex justify-content-between border-top border-bottom p-2" v-for="(contact, index) in inputSearchContacts" @click="currentContact = index" :class="{'active' : currentContact == index}">
                             <div>
                                 <div class="avatar d-inline-block">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="w-100 rounded-circle d-inline-block"> 
@@ -69,7 +69,7 @@
                             </div>
                             
                             <div class="text-end">
-                                <span class="my-clock-sx">12:00</span>
+                                <span class="my-clock">12:00</span>
                             </div>
                         </li>
                     </ul>
@@ -101,7 +101,7 @@
                 <div class="main-mex p-5">
                     <div class="row-mex d-flex mb-2" v-for="message in contacts[currentContact].messages" :class="{'user-mex' : message.status == 'sent'}">
                         <div class="my-mex rounded-3 py-2 px-2 position-relative">
-                            <p class="m-0 px-1 pb-1">{{message.message}}</p>
+                            <p class="m-0 me-3 ms-1 pb-1">{{message.message}}</p>
                             <span class="my-clock pe-1 position-absolute bottom-0 end-0 align-self-end">15:00</span>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                     <div class="col text-center my-icon">
                         <a href="#"><i class="fa-regular fa-face-smile"></i></a>
                     </div>
-                    <div class="col-10"><input type="text" v-model="writing" class="w-100 p-1 border-0" @keyup.enter="addMex"></div>
+                    <div class="col-10"><input type="text" v-model="writingMex" class="w-100 p-1 border-0" @keyup.enter="addMex"></div>
                     <div class="col text-center my-icon">
                         <a href="#"><i class="fa-solid fa-microphone"></i></a>
                     </div>
