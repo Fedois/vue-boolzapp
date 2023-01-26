@@ -72,6 +72,10 @@
                                 <span class="my-clock">12:00</span>
                             </div>
                         </li>
+
+                        <li v-show="inputSearchContacts.length == 0">
+                            <h6 class="text-center mt-3">Search not found<i class="fa-solid fa-magnifying-glass"></i></h6>
+                        </li>
                     </ul>
                 </nav>
             </aside>
