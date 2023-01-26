@@ -8,6 +8,7 @@ data() {
         writingMex: '',
         searchContact: '',
         reply: 'ok',
+        display: '',
         contacts: [
             {
                 name: 'Michele',
@@ -184,6 +185,14 @@ methods: {
             
         }, 1000);
     },
+    addMexDelete(){
+        if(this.display == 'd-block'){
+            this.display = ''
+        }
+        else{
+            this.display = 'd-block'
+        }
+    }
 },
 computed: {
     inputSearchContacts(){

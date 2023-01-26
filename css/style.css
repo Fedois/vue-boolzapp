@@ -95,8 +95,22 @@ main{
 .user-mex{
     justify-content: end;
 }
-.user-mex > div{
+.user-mex > .my-mex{
     background-color: #d5f9ba;
+}
+.my-arrow{
+    display: none;
+}
+.my-mex:hover .my-arrow{
+    display: block;
+    cursor: pointer;
+}
+.delete-mex{
+    z-index: 30;
+}
+.delete-mex > p{
+    background-color: lightgray;
+    display: none;
 }
 footer{
     background-color: #f3eeea;

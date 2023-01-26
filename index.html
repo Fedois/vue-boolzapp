@@ -99,10 +99,18 @@
                 </header>
 
                 <div class="main-mex p-5">
-                    <div class="row-mex d-flex mb-2" v-for="message in contacts[currentContact].messages" :class="{'user-mex' : message.status == 'sent'}">
-                        <div class="my-mex rounded-3 py-2 px-2 position-relative">
+                    <div class="row-mex d-flex mb-2" v-for="(message, index) in contacts[currentContact].messages" :class="{'user-mex' : message.status == 'sent'}">
+                        <div class="my-mex rounded-3 py-2 px-2 position-relative" >
                             <p class="m-0 me-3 ms-1 pb-1">{{message.message}}</p>
                             <span class="my-clock pe-1 position-absolute bottom-0 end-0 align-self-end">15:00</span>
+                            <span class="my-arrow pe-1 position-absolute end-0 top-0" @click="addMexDelete">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        
+                            <div class="delete-mex ms-1 position-absolute end-0 z-index-1">
+                                <p class="m-0 ps-1 pe-3 position-relative" :class="display">
+                                    cancella messaggio
+                            </div>
                         </div>
                     </div>
                 </div>
