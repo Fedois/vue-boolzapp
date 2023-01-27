@@ -107,14 +107,14 @@
                         <div class="my-mex rounded-3 py-2 px-2 position-relative" >
                             <p class="m-0 me-3 ms-1 pb-2">{{message.message}}</p>
                             
-                            <span class="my-clock pe-1 position-absolute bottom-0 end-0 align-self-end">{{splitDate(message)}}</span>
+                            <span class="my-clock pe-1 position-absolute bottom-0 end-0 align-self-end">{{message.date}}</span>
                             
-                            <span class="my-arrow pe-1 position-absolute end-0 top-0" @click="addMexDelete">
+                            <span class="my-arrow pe-1 position-absolute end-0 top-0" @click="message.viewMex = !message.viewMex">
                                 <i class="fa-solid fa-chevron-down"></i>
                             </span>
                         
                             <div class="delete-mex ms-1 position-absolute end-0 z-index-1">
-                                <p class="m-0 ps-1 pe-3 position-relative" :class="display">
+                                <p class="m-0 p-1 border rounded-3 position-relative" :class="message.viewMex ? 'display' : ''" @click="deletedMessages(index)">
                                     cancella messaggio
                             </div>
                         </div>

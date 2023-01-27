@@ -111,8 +111,11 @@ main{
     z-index: 30;
 }
 .delete-mex > p{
-    background-color: lightgray;
+    background-color: white;
     display: none;
+}
+.display{
+    display: block !important;
 }
 footer{
     background-color: #f3eeea;
