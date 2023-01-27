@@ -5,8 +5,6 @@ createApp({
 data() {
     return {
         currentContact: 0,
-        userMex: 'user-mex',
-        pcMex: 'pc-mex',
         writingMex: '',
         searchContact: '',
         reply: 'ok',
@@ -176,9 +174,10 @@ data() {
         ]
     }
 },
+
 methods: {
     addMex(){
-        hour = new Date()
+        const hour = new Date()
 
         this.contacts[this.currentContact].messages.push({
             date: hour.getHours() + ':' + hour.getMinutes(),
@@ -205,8 +204,20 @@ methods: {
         else{
             this.display = 'd-block'
         }
-    }
+    },
+    
+    splitDate(message){
+        let splitDate = message.date
+        const splitted = splitDate.split(' ')
+        splitDate = splitted[1];
+
+        let splitHour = splitDate.split(':')
+        console.log(splitHour)
+        const removeSec = splitHour[0] + ':' + splitHour[1]
+        return removeSec
+    },
 },
+
 computed: {
     inputSearchContacts(){
         if(this.searchContact.trim().length > 0){
