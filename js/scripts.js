@@ -7,8 +7,6 @@ data() {
         currentContact: 0,
         writingMex: '',
         searchContact: '',
-        reply: 'ok',
-        display: '',
         contacts: [
             {
                 name: 'Michele',
@@ -198,10 +196,11 @@ data() {
 
 methods: {
     addMex(){
+
         const hour = new Date()
 
         this.contacts[this.currentContact].messages.push({
-            date: hour.getHours() + ':' + hour.getMinutes(),
+            dateNow: hour.getHours() + ':' + hour.getMinutes(),
             message: this.writingMex, 
             viewMex: false,
             status: 'sent'
@@ -211,9 +210,10 @@ methods: {
         
         setTimeout(() => {
             
+            let reply = 'ok!'
             this.contacts[this.currentContact].messages.push({
-                date: hour.getHours() + ':' + hour.getMinutes(),
-                message: this.reply, 
+                dateNow: hour.getHours() + ':' + hour.getMinutes(),
+                message: reply, 
                 viewMex: false,
                 status: 'received'
             })
@@ -223,18 +223,20 @@ methods: {
 
     deletedMessages(index){
         this.contacts[this.currentContact].messages.splice(index, 1)
-        console.log(index)
     },
     
-    // splitDate(message){
-    //     let splitDate = message.date
-    //     const splitted = splitDate.split(' ')
-    //     splitDate = splitted[1];
+    splitDate(message){
+        if(message.date != null){
+            let splitDate = message.date
+            const splitted = splitDate.split(' ')
+            splitDate = splitted[1];
 
-    //     let splitHour = splitDate.split(':')
-    //     const removeSec = splitHour[0] + ':' + splitHour[1]
-    //     return removeSec
-    // },
+            let splitHour = splitDate.split(':')
+            const removeSec = splitHour[0] + ':' + splitHour[1]
+
+            return removeSec
+        } 
+    },
 },
 
 computed: {

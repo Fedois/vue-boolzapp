@@ -3,7 +3,6 @@
     user-select: none;
 }
 body{
-    background: rgb(0,150,136);
     background: linear-gradient(180deg, rgba(0,150,136,1) 25%, rgba(216,219,213,1) 25%);
     height: 100vh;
 }
