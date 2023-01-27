@@ -113,6 +113,10 @@ main{
 .delete-mex > p{
     background-color: white;
     display: none;
+    box-shadow: 0px 5px 8px 1px rgba(0,0,0,0.47);
+}
+.delete-mex > p:hover{
+    cursor: pointer;
 }
 .display{
     display: block !important;

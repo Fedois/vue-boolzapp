@@ -221,7 +221,7 @@ methods: {
         }, 1000);
     },
 
-    deletedMessages: function(index){
+    deletedMessages(index){
         this.contacts[this.currentContact].messages.splice(index, 1)
         console.log(index)
     }
