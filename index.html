@@ -17,7 +17,7 @@
         <div class="main-container d-flex position-absolute top-50 start-50 translate-middle m-auto">
             <!-- contenuto SX -->
             <aside class="h-100">
-                <header class="d-flex align-items-center">
+                <header class="d-flex align-items-center p-1">
                     <div class="col-6">
                         <div class="avatar d-inline-block">
                             <img src="img/avatar_io.jpg" alt="img/avatar_io.jpg" class="w-100 rounded-circle d-inline-block"> 
@@ -82,8 +82,8 @@
 
             <!-- contenuto DX -->
             <main class="h-100">
-                <header class="d-flex justify-content-between align-items-center">
-                    <div class="">
+                <header class="d-flex justify-content-between align-items-center p-1">
+                    <div class="my-header-info-contact">
                         <div class="avatar d-inline-block">
                             <img :src="`img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name" class="w-100 rounded-circle d-inline-block"> 
                         </div>
@@ -92,7 +92,6 @@
                             <h6 class="m-0">{{contacts[currentContact].name}}</h6>
                             <span>ultimo accesso oggi alle 12:00</span>
                         </div>
-                        
                     </div>
                     
                     <div class="text-end my-icon">

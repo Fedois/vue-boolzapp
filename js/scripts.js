@@ -234,7 +234,7 @@ methods: {
             let splitHour = splitDate.split(':')
             const removeSec = splitHour[0] + ':' + splitHour[1]
 
-            return removeSec
+            return removeSec 
         } 
     },
 },
