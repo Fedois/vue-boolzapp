@@ -197,29 +197,29 @@ data() {
 
 methods: {
     addMex(){
-
         const date = new Date()
-
-        this.contacts[this.currentContact].messages.push({
-            date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds}` ,
-            message: this.writingMex, 
-            viewMex: false,
-            status: 'sent'
-        }),
         
-        this.writingMex = ''
-        
-        setTimeout(() => {
-            
-            let reply = 'ok!'
+        if(this.writingMex != ''){
             this.contacts[this.currentContact].messages.push({
-                date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds}`,
-                message: reply, 
+                date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds}` ,
+                message: this.writingMex, 
                 viewMex: false,
-                status: 'received'
+                status: 'sent'
             })
+        
+            this.writingMex = ''
+        
+            setTimeout(() => {
             
-        }, 1000);
+                let reply = 'ok!'
+                this.contacts[this.currentContact].messages.push({
+                    date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds}`,
+                    message: reply, 
+                    viewMex: false,
+                    status: 'received'
+                })
+            }, 1000);
+        }
     },
 
     deletedMessages(index){
@@ -227,15 +227,15 @@ methods: {
     },
     
     splitDate(message){
+        
+        let splitDate = message.date
+        const splitted = splitDate.split(' ')
+        splitDate = splitted[1] + ' ' + splitted[0];
 
-            let splitDate = message.date
-            const splitted = splitDate.split(' ')
-            splitDate = splitted[1] + ' ' + splitted[0];
+        let splitHour = splitDate.split(':')
+        const removeSec = splitHour[0] + ':' + splitHour[1]
 
-            let splitHour = splitDate.split(':')
-            const removeSec = splitHour[0] + ':' + splitHour[1]
-
-            return removeSec 
+        return removeSec 
     },
 },
 
