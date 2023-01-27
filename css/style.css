@@ -15,7 +15,7 @@ header{
 .avatar{
     height: 40px;
     width: 40px;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 img{
     object-fit: cover;
@@ -88,31 +88,24 @@ main{
     min-width: 30%;
     max-width: 60%;
 }
-.my-mex > p{
-    padding-right: 10px;
-}
 .sent{
     justify-content: end;
 }
 .sent > .my-mex{
     background-color: #d5f9ba;
 }
+.sent > .my-mex:hover > .my-arrow{
+    display: block !important;
+    cursor: pointer;
+}
 .received > .my-mex{
     background-color: #fdfdfd;
-}
-.my-arrow{
-    display: none;
-}
-.my-mex:hover .my-arrow{
-    display: block;
-    cursor: pointer;
 }
 .delete-mex{
     z-index: 30;
 }
 .delete-mex > p{
     background-color: white;
-    display: none;
     box-shadow: 0px 5px 8px 1px rgba(0,0,0,0.47);
 }
 .delete-mex > p:hover{
