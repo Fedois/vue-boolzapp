@@ -91,13 +91,13 @@ main{
 .my-mex > p{
     padding-right: 10px;
 }
-.user-mex{
+.sent{
     justify-content: end;
 }
-.user-mex > .my-mex{
+.sent > .my-mex{
     background-color: #d5f9ba;
 }
-.pc-mex > .my-mex{
+.received > .my-mex{
     background-color: #fdfdfd;
 }
 .my-arrow{

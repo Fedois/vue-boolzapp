@@ -178,12 +178,23 @@ data() {
 },
 methods: {
     addMex(){
-        this.contacts[this.currentContact].messages.push({message: this.writingMex, status: 'sent'}),
+        hour = new Date()
+
+        this.contacts[this.currentContact].messages.push({
+            date: hour.getHours() + ':' + hour.getMinutes(),
+            message: this.writingMex, 
+            status: 'sent'
+        }),
+        
         this.writingMex = ''
         
         setTimeout(() => {
             
-            this.contacts[this.currentContact].messages.push({message: this.reply, status: 'received'})
+            this.contacts[this.currentContact].messages.push({
+                date: hour.getHours() + ':' + hour.getMinutes(),
+                message: this.reply, 
+                status: 'received'
+            })
             
         }, 1000);
     },
