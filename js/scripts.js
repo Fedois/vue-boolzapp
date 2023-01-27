@@ -193,14 +193,15 @@ data() {
         ]
     }
 },
+// `${date.getDay()}/${date.getMonth()}/${date.getFullYear} `
 
 methods: {
     addMex(){
 
-        const hour = new Date()
+        const date = new Date()
 
         this.contacts[this.currentContact].messages.push({
-            dateNow: hour.getHours() + ':' + hour.getMinutes(),
+            date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds}` ,
             message: this.writingMex, 
             viewMex: false,
             status: 'sent'
@@ -212,7 +213,7 @@ methods: {
             
             let reply = 'ok!'
             this.contacts[this.currentContact].messages.push({
-                dateNow: hour.getHours() + ':' + hour.getMinutes(),
+                date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds}`,
                 message: reply, 
                 viewMex: false,
                 status: 'received'
@@ -226,16 +227,15 @@ methods: {
     },
     
     splitDate(message){
-        if(message.date != null){
+
             let splitDate = message.date
             const splitted = splitDate.split(' ')
-            splitDate = splitted[1];
+            splitDate = splitted[1] + ' ' + splitted[0];
 
             let splitHour = splitDate.split(':')
             const removeSec = splitHour[0] + ':' + splitHour[1]
 
             return removeSec 
-        } 
     },
 },
 
