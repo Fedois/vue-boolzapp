@@ -17,9 +17,9 @@
         <div class="main-container d-flex position-absolute top-50 start-50 translate-middle m-auto">
             <!-- contenuto SX -->
             <aside class="h-100">
-                <header class="d-flex align-items-center p-1">
+                <header class="d-flex align-items-center p-2">
                     <div class="col-6">
-                        <div class="avatar d-inline-block">
+                        <div class="my-circle d-inline-block">
                             <img src="img/avatar_io.jpg" alt="img/avatar_io.jpg" class="w-100 rounded-circle d-inline-block"> 
                         </div>
 
@@ -37,7 +37,7 @@
                 </header>
                 
                 <div class="silent d-flex align-items-center p-4">
-                    <div class="avatar d-inline-block bg-white rounded-circle text-center">
+                    <div class="my-circle d-inline-block bg-white rounded-circle text-center">
                         <i class="fa-solid fa-bell-slash"></i>
                     </div>
 
@@ -58,7 +58,7 @@
                     <ul class="list-style-none p-0">
                         <li class="d-flex justify-content-between p-3 border-bottom" v-for="(contact, index) in inputSearchContacts" @click="currentContact = index" :class="{'active' : currentContact == index}">
                             <div>
-                                <div class="avatar d-inline-block">
+                                <div class="my-circle d-inline-block">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="w-100 rounded-circle d-inline-block"> 
                                 </div>
             
@@ -82,9 +82,9 @@
 
             <!-- contenuto DX -->
             <main class="h-100">
-                <header class="d-flex justify-content-between align-items-center p-1">
+                <header class="d-flex justify-content-between align-items-center p-2">
                     <div class="my-header-info-contact">
-                        <div class="avatar d-inline-block">
+                        <div class="my-circle d-inline-block">
                             <img :src="`img/avatar${contacts[currentContact].avatar}.jpg`" :alt="contacts[currentContact].name" class="w-100 rounded-circle d-inline-block"> 
                         </div>
 

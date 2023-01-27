@@ -10,7 +10,7 @@ header{
     height: 50px;
     background-color: #eaeaea;
 }
-.avatar{
+.my-circle{
     height: 40px;
     width: 40px;
     margin-right: 10px;
@@ -43,8 +43,11 @@ aside{
     height: 80px;
     background-color: #8edafc;
 }
-.silent > .avatar{
+.silent > .my-circle{
     line-height: 40px;
+}
+.silent > .my-circle:hover{
+    cursor: pointer;
 }
 
 nav{
