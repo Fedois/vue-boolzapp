@@ -14,11 +14,13 @@
 <body>
     
     <div id="app">
-        <div class="main-container d-flex position-absolute top-50 start-50 translate-middle m-auto">
+        <div class="main-container d-flex position-absolute top-50 start-50 translate-middle">
             <!-- contenuto SX -->
             <aside class="h-100">
                 <header class="d-flex align-items-center p-2">
                     <div class="col-6">
+                        
+                        <!-- mio profilo -->
                         <div class="my-circle d-inline-block">
                             <img src="img/avatar_io.jpg" alt="img/avatar_io.jpg" class="w-100 rounded-circle d-inline-block"> 
                         </div>
@@ -48,6 +50,7 @@
                 </div>
 
                 <nav>
+                    <!-- cerca contatto -->
                     <div class="search p-1">
                         <div class="input-group flex-nowrap">
                             <span class=" px-4 bg-white py-2" id="addon-wrapping"><i class="fa-solid fa-magnifying-glass"></i></span>
@@ -55,8 +58,9 @@
                         </div>
                     </div>
                     
+                    <!-- lista dei contatti -->
                     <ul class="list-style-none p-0">
-                        <li class="d-flex justify-content-between p-3 border-bottom" v-for="(contact, index) in inputSearchContacts" @click="currentContact = index" :class="{'active' : currentContact == index}">
+                        <li class="d-flex justify-content-between p-3 border-bottom" v-for="(contact, index) in inputSearchContacts" :key="index" @click="currentContact = getAvatarId(contact.avatar)" :class="{'active' : currentContact == getAvatarId(contact.avatar)}">
                             <div>
                                 <div class="my-circle d-inline-block">
                                     <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name" class="w-100 rounded-circle d-inline-block"> 
@@ -64,12 +68,12 @@
             
                                 <div class="name d-inline-block lh-1">
                                     <h6 class="m-0">{{contact.name}}</h6>
-                                    <span>ultimo messaggio inviato</span>
+                                    <span>{{ contact.messages[contact.messages.length - 1].message }}</span>
                                 </div>
                             </div>
                             
                             <div class="text-end">
-                                <span class="my-clock">12:00</span>
+                                <span class="my-clock">{{ splitDate(contact.messages[contact.messages.length - 1]) }}</span>
                             </div>
                         </li>
 
@@ -90,7 +94,8 @@
 
                         <div class="name d-inline-block lh-1 align-middle">
                             <h6 class="m-0">{{contacts[currentContact].name}}</h6>
-                            <span>ultimo accesso oggi alle 12:00</span>
+                            <span :class="writing == false ? 'display' : 'd-none'">ultimo accesso oggi alle {{ getLastInteraction(contacts[currentContact].messages) }}</span>
+                            <span :class="writing == true ? 'display' : 'd-none'">Sta scrivendo...</span>
                         </div>
                     </div>
                     
@@ -101,8 +106,8 @@
                     </div>
                 </header>
 
-                <div class="main-mex p-5">
-                    <div class="row-mex d-flex mb-2" v-for="(message, index) in contacts[currentContact].messages" :class="message.status">
+                <div class="main-mex p-5 position-relative">
+                    <div class="d-flex mb-2" v-for="(message, index) in contacts[currentContact].messages" :class="message.status">
                         <div class="my-mex rounded-3 py-2 px-2 position-relative" >
                             <p class="mb-1 me-3 ms-1 pb-2">{{message.message}}</p>
                             

@@ -7,6 +7,7 @@ data() {
         currentContact: 0,
         writingMex: '',
         searchContact: '',
+        writing: false,
         contacts: [
             {
                 name: 'Michele',
@@ -190,14 +191,17 @@ data() {
                     }
             ],
             }
-        ]
+        ],
     }
 },
-// `${date.getDay()}/${date.getMonth()}/${date.getFullYear} `
 
 methods: {
     addMex(){
         const date = new Date()
+
+        setTimeout(() => {
+            this.writing = true
+        }, 1500)
         
         if(this.writingMex != ''){
             this.contacts[this.currentContact].messages.push({
@@ -210,7 +214,6 @@ methods: {
             this.writingMex = ''
         
             setTimeout(() => {
-            
                 let reply = 'ok!'
                 this.contacts[this.currentContact].messages.push({
                     date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds}`,
@@ -218,7 +221,8 @@ methods: {
                     viewMex: false,
                     status: 'received'
                 })
-            }, 1000);
+                this.writing = false
+            }, 3000);
         }
     },
 
@@ -227,7 +231,7 @@ methods: {
     },
     
     splitDate(message){
-        
+        console.log(message)
         let splitDate = message.date
         const splitted = splitDate.split(' ')
         splitDate = splitted[1] + ' ' + splitted[0];
@@ -237,17 +241,31 @@ methods: {
 
         return removeSec 
     },
+
+    getAvatarId(avatar){
+        id = avatar.split('')
+        id.shift()
+        return id.join() - 1
+    },
+
+    getLastInteraction(messages){
+        all_received = []
+        messages.forEach(mex => {
+            if(mex.status == 'received'){
+                all_received.push(mex)
+            }
+        });
+
+        last_interaction = all_received[all_received.length - 1]
+        return last_interaction = this.splitDate(last_interaction)
+    }
+
 },
 
 computed: {
-    inputSearchContacts(){
-        if(this.searchContact.trim().length > 0){
-            return this.contacts.filter((contact) => 
-                contact.name.toLowerCase().includes(this.searchContact.trim().toLowerCase())
-            )
-        }
-        
-        return this.contacts
+    inputSearchContacts() {
+        return this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchContact.toLowerCase()))
     }
-}
+},
+
 }).mount('#app')
