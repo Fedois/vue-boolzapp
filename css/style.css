@@ -88,6 +88,7 @@ main{
 .my-mex{
     min-width: 30%;
     max-width: 60%;
+    word-wrap: break-word;
 }
 .sent{
     justify-content: end;
